@@ -1,0 +1,35 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "pages"
+    label: "Sider"
+    files:
+      - file: "index.html"
+        label: "Forside"
+        name: "forside"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Indhold", name: "body", widget: "markdown" }
+      - file: "ydelser.html"
+        label: "Ydelser"
+        name: "ydelser"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Indhold", name: "body", widget: "markdown" }
+      - file: "referencer.html"
+        label: "Referencer"
+        name: "referencer"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Indhold", name: "body", widget: "markdown" }
+      - file: "kontakt.html"
+        label: "Kontakt"
+        name: "kontakt"
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Indhold", name: "body", widget: "markdown" }
