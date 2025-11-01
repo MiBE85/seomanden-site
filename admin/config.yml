@@ -18,18 +18,21 @@ collections:
         fields:
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Indhold", name: "body", widget: "markdown" }
+
       - file: "ydelser.html"
         label: "Ydelser"
         name: "ydelser"
         fields:
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Indhold", name: "body", widget: "markdown" }
+
       - file: "referencer.html"
         label: "Referencer"
         name: "referencer"
         fields:
           - { label: "Titel", name: "title", widget: "string" }
           - { label: "Indhold", name: "body", widget: "markdown" }
+
       - file: "kontakt.html"
         label: "Kontakt"
         name: "kontakt"
