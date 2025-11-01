@@ -2,7 +2,7 @@ backend:
   name: github
   repo: MiBE85/seomanden-site
   branch: main
-  base_url: https://decap-oauth.netlify.app
+  base_url: https://decap-cms-oauth.deno.dev
   auth_endpoint: auth
 
 media_folder: "assets/uploads"
