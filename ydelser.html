@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ydelser – Seomanden.dk</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:'Inter',sans-serif;background-color:#f7f7f6;color:#2f2f2f;background-image:radial-gradient(rgba(0,0,0,.02) 1px,transparent 1px);background-size:4px 4px;}
+    @keyframes fadein{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+    .fade-in{opacity:0;animation:fadein 1s ease forwards;}
+    .delay-1{animation-delay:.2s}.delay-2{animation-delay:.5s}.delay-3{animation-delay:.8s}
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+  <!-- Header (samme som index) -->
+  <header class="bg-white/90 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-gray-200 shadow-sm fade-in">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="index.html" class="text-xl font-semibold text-indigo-700 tracking-tight">Seomanden.dk</a>
+      <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-indigo-700">Forside</a>
+        <a href="ydelser.html" class="text-indigo-700 font-semibold">Ydelser</a>
+        <a href="referencer.html" class="hover:text-indigo-700">Referencer</a>
+        <a href="kontakt.html" class="hover:text-indigo-700">Kontakt</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden text-indigo-700 text-3xl focus:outline-none">☰</button>
+    </div>
+    <nav id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+      <a href="index.html" class="block px-6 py-3 hover:text-indigo-700">Forside</a>
+      <a href="ydelser.html" class="block px-6 py-3 text-indigo-700 font-semibold">Ydelser</a>
+      <a href="referencer.html" class="block px-6 py-3 hover:text-indigo-700">Referencer</a>
+      <a href="kontakt.html" class="block px-6 py-3 hover:text-indigo-700">Kontakt</a>
+    </nav>
+    <script>
+      const menuBtn=document.getElementById("menu-btn"),menu=document.getElementById("mobile-menu");
+      menuBtn.addEventListener("click",()=>menu.classList.toggle("hidden"));
+    </script>
+  </header>
+
+  <!-- Hero -->
+  <section class="py-28 pt-40 text-center fade-in delay-1">
+    <div class="max-w-3xl mx-auto px-6">
+      <h1 class="text-5xl font-semibold mb-4 text-gray-900">Mine SEO-ydelser</h1>
+      <p class="text-lg text-gray-600">Fra tekniske audits til contentstrategi og linkbuilding – alt skræddersyet til din forretning.</p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="max-w-6xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-10 fade-in delay-2">
+    <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-8 hover:shadow-md transition">
+      <h2 class="text-2xl font-semibold mb-3 text-gray-900">Teknisk SEO</h2>
+      <p>Jeg optimerer alt det bag kulisserne – hastighed, struktur, schema og indeksering. Så dit site performer bedst muligt.</p>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-8 hover:shadow-md transition">
+      <h2 class="text-2xl font-semibold mb-3 text-gray-900">Content & Strategi</h2>
+      <p>SEO handler om relevans. Jeg laver contentplaner, søgeordsanalyser og hjælper med at skrive tekster, der bliver læst – og fundet.</p>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-8 hover:shadow-md transition">
+      <h2 class="text-2xl font-semibold mb-3 text-gray-900">Linkbuilding</h2>
+      <p>Autoritet bygges over tid. Jeg arbejder med naturlige links, omtaler og samarbejder, der styrker din position.</p>
+    </div>
+    <div class="bg-white border border-gray-200 rounded-2xl shadow-sm p-8 hover:shadow-md transition">
+      <h2 class="text-2xl font-semibold mb-3 text-gray-900">Rådgivning & Sparring</h2>
+      <p>Du får ærlig rådgivning om din SEO-indsats, prioritering og strategi – uanset om du driver webshop eller B2B.</p>
+    </div>
+  </section>
+
+  <footer class="bg-white border-t border-gray-200 text-center py-8 text-sm text-gray-500 fade-in delay-3">
+    © 2025 Seomanden.dk
+  </footer>
+</body>
+</html>
