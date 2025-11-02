@@ -1,22 +1,24 @@
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
-exports.handler = async (event, context) => {
-  const provider = "github";
-  const siteUrl = process.env.URL || "https://beautiful-gecko-00d95b.netlify.app";
+export async function handler(event) {
+  const { code } = event.queryStringParameters;
+  const client_id = process.env.CLIENT_ID;
+  const client_secret = process.env.CLIENT_SECRET;
 
-  if (event.queryStringParameters && event.queryStringParameters.code) {
-    return {
-      statusCode: 302,
-      headers: {
-        Location: `${siteUrl}/admin/#/callback?code=${event.queryStringParameters.code}`,
-      },
-    };
-  }
+  const response = await fetch("https://github.com/login/oauth/access_token", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify({
+      client_id,
+      client_secret,
+      code,
+    }),
+  });
 
-  const authUrl = `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&scope=repo,user&redirect_uri=${siteUrl}/.netlify/functions/auth`;
+  const data = await response.json();
 
   return {
-    statusCode: 302,
-    headers: { Location: authUrl },
+    statusCode: 200,
+    body: JSON.stringify(data),
   };
-};
+}
