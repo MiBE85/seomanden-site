@@ -1,42 +1,37 @@
 backend:
   name: github
-  repo: MiBE85/seomanden-site
+  repo: MiBE85/seomanden-site # dit eget GitHub repo
   branch: main
-  base_url: https://decap-cms-oauth.deno.dev/
-  auth_endpoint: /.netlify/functions/auth
+  base_url: https://decap-cms-oauth.deno.dev
+  auth_endpoint: auth
 
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+site_url: "https://beautiful-gecko-00d95b.netlify.app"
+display_url: "https://beautiful-gecko-00d95b.netlify.app"
 
 collections:
   - name: "pages"
     label: "Sider"
     files:
-      - file: "index.html"
-        label: "Forside"
-        name: "forside"
-        fields:
-          - { label: "Titel", name: "title", widget: "string" }
-          - { label: "Indhold", name: "body", widget: "markdown" }
-
-      - file: "ydelser.html"
-        label: "Ydelser"
+      - label: "Forside"
+        name: "index"
+        file: "index.html"
+        editor:
+          preview: false
+      - label: "Ydelser"
         name: "ydelser"
-        fields:
-          - { label: "Titel", name: "title", widget: "string" }
-          - { label: "Indhold", name: "body", widget: "markdown" }
-
-      - file: "referencer.html"
-        label: "Referencer"
-        name: "referencer"
-        fields:
-          - { label: "Titel", name: "title", widget: "string" }
-          - { label: "Indhold", name: "body", widget: "markdown" }
-
-      - file: "kontakt.html"
-        label: "Kontakt"
+        file: "ydelser.html"
+        editor:
+          preview: false
+      - label: "Kontakt"
         name: "kontakt"
-        fields:
-          - { label: "Titel", name: "title", widget: "string" }
-          - { label: "Indhold", name: "body", widget: "markdown" }
+        file: "kontakt.html"
+        editor:
+          preview: false
+      - label: "Referencer"
+        name: "referencer"
+        file: "referencer.html"
+        editor:
+          preview: false
