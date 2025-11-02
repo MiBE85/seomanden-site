@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: MiBE85/seomanden-site # dit eget GitHub repo
+  repo: MiBE85/seomanden-site
   branch: main
   base_url: https://decap-cms-oauth.deno.dev
   auth_endpoint: auth
@@ -18,20 +18,27 @@ collections:
       - label: "Forside"
         name: "index"
         file: "index.html"
-        editor:
-          preview: false
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Indhold", name: "body", widget: "text" }
+
       - label: "Ydelser"
         name: "ydelser"
         file: "ydelser.html"
-        editor:
-          preview: false
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Indhold", name: "body", widget: "text" }
+
       - label: "Kontakt"
         name: "kontakt"
         file: "kontakt.html"
-        editor:
-          preview: false
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Indhold", name: "body", widget: "text" }
+
       - label: "Referencer"
         name: "referencer"
         file: "referencer.html"
-        editor:
-          preview: false
+        fields:
+          - { label: "Titel", name: "title", widget: "string" }
+          - { label: "Indhold", name: "body", widget: "text" }
