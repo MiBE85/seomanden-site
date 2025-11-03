@@ -3,41 +3,40 @@ backend:
   branch: main
   identity_url: https://beautiful-gecko-00d95b.netlify.app/.netlify/identity
   gateway_url: https://beautiful-gecko-00d95b.netlify.app/.netlify/git
+  commit_messages:
+    create: "Opret ny side: {{slug}}"
+    update: "Opdater side: {{slug}}"
+    delete: "Slet side: {{slug}}"
+    uploadMedia: "Upload fil: {{path}}"
+    deleteMedia: "Slet fil: {{path}}"
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
+publish_mode: editorial_workflow
+
 site_url: "https://beautiful-gecko-00d95b.netlify.app"
-display_url: "https://beautiful-gecko-00d95b.netlify.app"
 
 collections:
   - name: "pages"
     label: "Sider"
-    files:
-      - label: "Forside"
-        name: "index"
-        file: "index.html"
-        fields:
-          - { label: "Titel", name: "title", widget: "string" }
-          - { label: "Indhold", name: "body", widget: "text" }
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "SEO Titel", name: "seo_title", widget: "string", required: false }
+      - { label: "Beskrivelse", name: "description", widget: "text", required: false }
+      - { label: "Indhold", name: "body", widget: "markdown" }
 
-      - label: "Ydelser"
-        name: "ydelser"
-        file: "ydelser.html"
-        fields:
-          - { label: "Titel", name: "title", widget: "string" }
-          - { label: "Indhold", name: "body", widget: "text" }
-
-      - label: "Kontakt"
-        name: "kontakt"
-        file: "kontakt.html"
-        fields:
-          - { label: "Titel", name: "title", widget: "string" }
-          - { label: "Indhold", name: "body", widget: "text" }
-
-      - label: "Referencer"
-        name: "referencer"
-        file: "referencer.html"
-        fields:
-          - { label: "Titel", name: "title", widget: "string" }
-          - { label: "Indhold", name: "body", widget: "text" }
+  - name: "blog"
+    label: "Blogindlæg"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Udgivelsesdato", name: "date", widget: "datetime" }
+      - { label: "Uddrag", name: "summary", widget: "text", required: false }
+      - { label: "Indhold", name: "body", widget: "markdown" }
+      - { label: "Feature billede", name: "image", widget: "image", required: false }
