@@ -3,6 +3,7 @@ backend:
   branch: main
   identity_url: https://beautiful-gecko-00d95b.netlify.app/.netlify/identity
   gateway_url: https://beautiful-gecko-00d95b.netlify.app/.netlify/git
+
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
