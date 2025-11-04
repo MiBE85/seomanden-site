@@ -1,8 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: MiBE85/seomanden-site
   branch: main
-  identity_url: https://beautiful-gecko-00d95b.netlify.app/.netlify/identity
-  gateway_url: https://beautiful-gecko-00d95b.netlify.app/.netlify/git
   commit_messages:
     create: "Opret ny side: {{slug}}"
     update: "Opdater side: {{slug}}"
@@ -12,9 +11,7 @@ backend:
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
-
 publish_mode: editorial_workflow
-
 site_url: "https://beautiful-gecko-00d95b.netlify.app"
 
 collections:
@@ -28,7 +25,6 @@ collections:
       - { label: "SEO Titel", name: "seo_title", widget: "string", required: false }
       - { label: "Beskrivelse", name: "description", widget: "text", required: false }
       - { label: "Indhold", name: "body", widget: "markdown" }
-
   - name: "blog"
     label: "Blogindlæg"
     folder: "content/blog"
