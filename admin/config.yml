@@ -1,6 +1,5 @@
 backend:
-  name: gitlab
-  repo: MiBE85/seomanden-site
+  name: git-gateway
   branch: main
   commit_messages:
     create: "Opret ny side: {{slug}}"
