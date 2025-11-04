@@ -6,6 +6,7 @@
   <title>Seomanden.dk – SEO uden støj</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -90,5 +91,17 @@
   <footer class="bg-white border-t border-gray-200 text-center py-8 text-sm text-gray-500 fade-in delay-3">
     © 2025 Seomanden.dk – Rolig SEO med resultater
   </footer>
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
