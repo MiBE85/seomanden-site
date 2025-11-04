@@ -1,5 +1,5 @@
 backend:
-  name: github
+  name: gitlab
   repo: MiBE85/seomanden-site
   branch: main
   commit_messages:
